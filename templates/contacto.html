@@ -1,0 +1,91 @@
+{% extends 'plantilla_base.html' %}
+
+{% load static %} 
+
+{% block style %}
+    <link href="{% static 'css/contacto.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block titulo %}Contacto{% endblock %}
+
+{% block contenido %}
+
+<div class="container bg-light mt-5 mb-5 p-4">
+    <div class="row">
+        <div class="col-12 col-md-5">
+            <h2>Formulario de Contacto</h2>
+            <hr>
+            <form action="{% url 'formulario' %}" method="post" class="needs-validation" novalidate>
+                {% csrf_token %}
+
+                <!-- Mensaje de éxito -->
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nombre Completo</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                    <div class="invalid-feedback">Introduzca su nombre completo</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                    <div class="invalid-feedback">Introduzca un correo electrónico válido</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="subject" class="form-label">Asunto</label>
+                    <input type="text" class="form-control" id="subject" name="subject" required>
+                    <div class="invalid-feedback">Introduzca el motivo de su mensaje</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="message" class="form-label">Mensaje</label>
+                    <textarea class="form-control" name="message" id="message" rows="5" required></textarea>
+                    <div class="invalid-feedback">Introduzca el mensaje</div>
+                </div>
+
+                <button class="btn btn-primary" type="submit">Enviar Mensaje</button>
+            </form>
+        </div>
+
+        <hr class="d-block d-md-none w-100 my-4">
+
+        <div class="col-12 col-md-7 map-container fade-in" >
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3319.841104775336!2d-71.22042822538923!3d-33.6871783096728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662f7f2a8757289%3A0x3a7f86582dd8a040!2sRestaurant%20Melipilla%20Bisou!5e0!3m2!1ses!2scl!4v1732588835823!5m2!1ses!2scl" width="100%" height="450" style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="contact-info mt-2 text-center">
+                <p><strong>Dirección:</strong> Valdés 781, 9580889 Melipilla, Región Metropolitana</p>
+                <p><strong>Teléfono:</strong> +569 6845 7606</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Script para validación de formulario -->
+<script>
+    (function () {
+        'use strict'
+        var forms = document.querySelectorAll('.needs-validation')
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+                }, false)
+            })
+    })()
+</script>
+
+{% endblock %}

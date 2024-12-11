@@ -1,0 +1,215 @@
+/*Aquí se encuentra el principal css utilizado en la plantilla base y el sitio en general*/
+
+:root {
+    --white: #f7f7f7;    /* http://colormind.io/bootstrap/# */
+    --light: #e0e0e0;    /* https://getbootstrap.com/docs/5.3/customize/color/ */
+    --dark: #413d42;
+    --primary: #9f2c17;
+    --secondary: #8a9093;
+    --info: #c87853;
+}
+
+body {
+    background-color: var(--white)
+}
+
+/* TIPOGRAFÍA */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Birthstone', cursive;
+}
+
+h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(2rem, 4.5vw, 2.8rem); }
+h3 { font-size: clamp(1.8rem, 3.5vw, 2.2rem); }
+h4 { font-size: clamp(1.5rem, 3vw, 1.8rem); }
+h5 { font-size: clamp(1.3rem, 2.5vw, 1.5rem); }
+h6 { font-size: clamp(1.1rem, 2vw, 1.2rem); }
+
+/* FONDOS */
+.header, .navbar, .footer {
+    background-color: var(--dark); 
+    color: var(--white)!important;
+}
+
+.bg-rojo {
+    background-color: var(--primary); 
+    color: var(--white); 
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(27, 27, 27, 0.432);
+}
+
+.bg-negro {
+    background-color: var(--dark); 
+    color: var(--white); 
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(27, 27, 27, 0.432);
+}
+
+.bg-light {
+    background-color: var(--light); 
+    color: var(--dark); 
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(27, 27, 27, 0.432);
+}
+
+/* HEADER */
+
+.header {
+    padding: 0; 
+    width: 100%;
+}
+
+.header .d-flex {
+    margin: 0; 
+}
+
+.link-brand {
+    text-decoration: none; 
+    color: var(--white); 
+}
+
+.link-brand:hover {
+    color: var(--white); 
+}
+
+.navbar {
+    background-color: var(--dark);
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: var(--white);
+    background-color: var(--primary);
+}
+
+.nav-pills .nav-link{
+    margin: 10px;
+    padding-left: 8px;  
+    padding-right: 8px;
+}
+
+.nav-link:hover {
+    color: var(--white);
+    background-color: var(--primary);
+}
+
+/* BOTONES */
+
+.btn {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-4px); 
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.btn-primary {
+    background-color: var(--primary) !important;
+    border: 2px solid var(--primary) !important;
+    color: var(--white) !important;
+}
+
+.btn-primary:focus, .btn-primary:active {
+    background-color: var(--info) !important;
+    border-color: var(--info) !important;
+}
+
+.btn-secondary {
+    background-color: var(--secondary) !important; 
+    border: 2px solid var(--secondary) !important;
+    color: var(--white) !important; 
+}
+
+.btn-secondary:focus, .btn-secondary:active {
+    background-color: var(--info) !important;
+    border-color: var(--info) !important;
+}
+
+/* ANIMACIÓN FADE/DESVANECIMIENTO */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    /* Eliminamos la transición aquí */
+}
+
+.fade-in-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0); 
+    }
+}
+
+
+/* STICKER */
+
+.sticker-whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: -100px; 
+    display: none; 
+    z-index: 1000;
+    transition: all 0.5s ease-in-out;
+    animation: slideIn 1s forwards; 
+    border-radius: 50%; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sticker-whatsapp img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 50%; 
+}
+
+.sticker-whatsapp a img:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes slideIn {
+    from {
+        right: -100px; 
+    }
+    to {
+        right: 20px; 
+    }
+}
+
+/* FOOTER */
+.footer {
+    background-color: var(--dark);
+    text-align: center;
+    position: relative; 
+    width: 100%;
+}
+
+.footer span {
+    color: var(--light);
+}
+
+.footer a svg {
+    margin-right: 30px;
+}
+
+/* TARJETAS */
+.card {
+    border: 1px var(--secondary);
+    border-radius: 5px;
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 2s;
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.05) !important;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.5) !important;
+}

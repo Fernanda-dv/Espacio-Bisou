@@ -1,0 +1,88 @@
+{% extends 'plantilla_base.html' %}
+
+{% load static %}
+
+{% block style %}
+<link href="{% static 'css/chris_de_paris.css' %}" rel="stylesheet"> 
+{% endblock %}
+
+{% block titulo %}Chris de Paris{% endblock %}
+
+{% block contenido %}
+
+<div class="container-fluid p-5 mb-5 chris-banner">
+    <div class="row align-items-center">
+        <div class="col-md-8">
+            <div class="container-fluid text-center">
+                <h1 class="display-4">Chris de Paris</h1>
+                <p class="col-md-10 mx-auto">
+                    ¿Cansado de la comida rápida y aburrida? Te presentamos Chris de París, ¡tu nueva solución para comer rico y saludable 😋! Ofrecemos una variedad de deliciosas comidas gourmet en frascos de vidrio, listas para disfrutar en cualquier momento y lugar.🍴
+                <div class="text-center mb-3">
+                    <a href="#locales" class="btn btn-secondary">Puntos de Venta</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 text-center logo-container">
+            <img src="{% static 'imagenes/chris_de_paris_logo.jpeg' %}" class="img-fluid logo-chris" alt="Logo Chris de Paris">
+        </div>
+    </div>
+</div>
+
+<div class="container mb-5">
+    <h3 class="text-center mb-4">Nuestros Productos</h3>
+    <div class="row g-4">
+        {% for producto in productos %}
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card h-100 producto-card fade-in">
+                <img src="{{ producto.imagen.url }}" class="card-img-top p-4" alt="Imagen de {{ producto.nombre }}" loading="lazy">
+                <div class="card-body">
+                    <h4 class="card-title">{{ producto.nombre }}</h4>
+                    <p class="card-text">{{ producto.descripcion }}</p>
+                    {% if producto.precio %}
+                    <p class="card-text">$ {{ producto.precio }}</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div><hr>
+</div>
+
+<div class="container mb-5">
+    <h3 id="locales" class="text-center mb-4">¿Dónde encontrar los productos Chris de Paris?</h3>
+    <div class="row g-4">
+        {% for local in locales %}
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 local-card fade-in">
+                <div class="row g-0">
+                    {% if local.imagen %}
+                    <div class="col-4">
+                        <img src="{{ local.imagen.url }}" class="img-fluid rounded-end" alt="{{ local.nombre }}">
+                    </div>
+                    <div class="col-8">
+                    {% else %}
+                    <div class="col-12">
+                    {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ local.nombre }}</h5>
+                            <p class="card-text">
+                                <strong>Dirección:</strong><br>
+                                {{ local.dirección }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div><hr>
+</div>
+
+<div class="container-flex text-center mt-5 pb-5">
+    <h5 style="font-family: 'Arial', sans-serif; font-weight: bold;">¿Te gustaría tener nuestros productos en tu local?</h3>
+    <p>Si estás interesado en ofrecer la auténtica cocina francesa a tus clientes, ¡no dudes en ponerte en contacto con nosotros!</p>
+    <a href="{% url 'contacto' %}" class="btn btn-primary">Contáctanos</a>
+</div>
+
+
+{% endblock %}

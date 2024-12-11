@@ -1,0 +1,17 @@
+.form-label {
+    color: var(--dark);
+}
+
+.map-container {
+    padding: 20px; 
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 450px; 
+    border: 1; 
+}
+
+.contact-info p {
+    margin: 0.5rem; 
+}

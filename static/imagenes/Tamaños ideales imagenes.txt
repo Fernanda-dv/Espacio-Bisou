@@ -1,0 +1,30 @@
+1. Banners (imágenes horizontales grandes):
+
+Uso: Imágenes de encabezados o sliders.
+Tamaño recomendado: 1920 x 1080 px (relación 16:9) para pantallas grandes.
+Formato: JPEG (alta calidad y buena compresión).
+Peso ideal: Menos de 300 KB
+
+2. Imágenes cuadradas (platos, decoración, etc.):
+
+Uso: Galerías, tarjetas o grids.
+Tamaño recomendado:
+Para vistas completas: 800 x 800 px.
+Para miniaturas (thumbnails): 400 x 400 px.
+Formato: JPEG o WebP (si el navegador lo soporta).
+Peso ideal: Entre 50 KB y 150 KB según la resolución.
+
+3. Logos:
+Tamaño recomendado:
+Logotipo principal: 500 x 500 px o más, si es cuadrado.
+Versiones horizontales: 500 x 200 px.
+Formato: PNG (fondo transparente)
+Peso ideal: Menos de 50 KB.
+
+4. Imágenes decorativas del restaurante:
+Uso: Elementos destacados en secciones.
+Tamaño recomendado:
+Rectangulares: 1200 x 800 px (relación 3:2).
+Cuadradas: 800 x 800 px.
+Formato: JPEG 
+Peso ideal: 100 KB a 200 KB.

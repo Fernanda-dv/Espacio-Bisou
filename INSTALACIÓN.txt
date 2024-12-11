@@ -1,0 +1,39 @@
+INSTALACIÓN: 
+
+. venv\Scripts\activate          #Activar entorno virtual
+pip install -r requirements.txt  #Instalar requerimientos del proyecto
+
+------------------------------------------------------------------------
+DETALLES IMPORTANTES:
+
+nombre base de datos: db_bisou
+
+Ruta de admin: /admin
+Nombre de admin: admin
+Contraseña: admin
+
+
+------------------------------------------------------------------------
+Glosario:
+
+Python manage.py runserver           #Iniciar sitio
+Python manage.py runserver 3000      #Especificar un puerto (en caso de ser necesario)
+python manage.py collectstatic       
+
+ 
+python3 manage.py makemigrations     #Crear migraciones
+python3 manage.py migrate            #Aplicar migraciones
+python3 manage.py makemigrations nombreApp #Especificar  
+
+python -m venv venv                  #Crear entorno virtual
+venv\Scripts\activate                #Activar entorno virtual
+
+pip freeze > requirements.txt        #Crear requerimientos del proyecto
+pip install -r requirements.txt      #Instalar requerimientos del proyecto
+pip3 list                            #Muestra todo lo que está instalado en el entorno
+
+#Crear Proyecto:
+django-admin startproject ProyectoBisou .
+Python manage.py startapp NombreAPP  
+
+python3 manage.py createsuperuser #Creación Administrador

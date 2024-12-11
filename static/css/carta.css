@@ -1,0 +1,21 @@
+.platos {
+    width: 100%; 
+    height: 300px;
+    object-fit: cover; 
+}
+
+.platos img {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.platos img.fade-in-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.plato-titulo {
+    font-family: 'Birthstone', cursive;
+    font-size: 2.5rem;
+}

@@ -1,0 +1,73 @@
+
+.chris-banner {
+    background-image: url("../imagenes/madera.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    box-shadow: 0 4px 10px var(--dark); 
+}
+
+.chris-banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1;
+}
+
+.chris-banner .container-fluid {
+    position: relative;
+    z-index: 2;
+}
+
+.chris-banner h1 {
+    color: #fff;
+    font-size: 3rem;
+    z-index: 2;
+}
+
+.chris-banner p {
+    color: #fff;
+    z-index: 2;
+}
+
+.logo-chris {
+    width: 180px; 
+    height: 180px;
+    border-radius: 50%; 
+    object-fit: cover; 
+    z-index: 2;
+}
+
+.logo-container {
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+    .chris-banner h1 {
+        font-size: 2rem;
+    }
+    .chris-banner p {
+        font-size: 1rem;
+    }
+    .logo-chris {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+.producto-card {
+    color: var(--white);
+    background-color: rgb(84, 86, 129);
+}
+
+.local-card {
+    color: var(--dark);
+    background-color: var(--white);
+    border: 2px dashed var(--secondary);
+    border-radius: 5px;
+}

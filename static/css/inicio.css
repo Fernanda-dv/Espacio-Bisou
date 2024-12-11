@@ -1,0 +1,104 @@
+/* BANNER */
+
+.banner-background {
+    position: relative; 
+    background-image: url("../imagenes/banner.jpg");
+    background-size: cover; 
+    background-position: center; 
+    height: 80vh; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    box-shadow: 0 4px 10px var(--dark); 
+}
+
+.banner-background::before {
+    content: ""; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1; 
+}
+
+.banner-background h1{
+    z-index: 2;
+    line-height: 2rem;
+    color: var(--white);
+}
+
+.banner-background p {
+    color: var(--white);
+    z-index: 2;
+    margin-top: 1rem;
+}
+
+.banner-background .btn {
+    position: relative;
+    z-index: 2;
+    margin: 0.5rem; 
+}
+
+
+/* ACORDEÓN */
+
+/* Personalización del acordeón */
+.accordion-button {
+    background-color: #9f2c17;  /* Rojo oscuro para el fondo */
+    color: #ffffff;             /* Texto blanco */
+    font-size: 1.2rem;          /* Tamaño de fuente más grande */
+    padding: 1.2rem;            /* Más padding para hacerlo más alto */
+    border: none;               /* Eliminar el borde predeterminado */
+    border-radius: 10px;        /* Bordes redondeados */
+    box-shadow: none;           /* Sin sombra de inicio */
+    transition: background-color 0.3s ease-in-out; /* Transición suave para el cambio de color */
+}
+
+/* Efecto al pasar el ratón por encima */
+.accordion-button:hover {
+    background-color: #c87853;  /* Rojo más suave al pasar el ratón */
+    color: #ffffff;             /* Mantener texto blanco */
+}
+
+/* Estilo del acordeón cuando está abierto */
+.accordion-button:focus {
+    outline: none;              /* Eliminar contorno */
+    box-shadow: 0 0 0 0.25rem rgba(156, 44, 23, 0.25); /* Sombra roja cuando se selecciona */
+}
+
+/* Estilo del contenido del acordeón */
+.accordion-collapse {
+    background-color: #8a9093;  /* Fondo gris suave para el contenido */
+    padding: 1rem;              /* Más espacio dentro del contenido */
+    border-radius: 10px;        /* Bordes redondeados */
+}
+
+/* Si deseas que el acordeón sea más ancho */
+.accordion {
+    max-width: 900px;  /* Ajusta el ancho máximo del acordeón */
+    margin: 0 auto;    /* Centrar el acordeón en la página */
+}
+
+/* Aumentar el tamaño de los botones */
+.accordion-button {
+    font-size: 1.5rem;  /* Tamaño de fuente más grande */
+    padding: 1.5rem 2rem;  /* Aumentar el padding para más altura */
+}
+
+/* Estilo de los iconos dentro de los botones del acordeón */
+.accordion-button::after {
+    color: #ffffff; /* Cambiar el color del icono de la flecha */
+    font-size: 1.5rem; /* Hacer las flechas más grandes */
+}
+
+/* Si el acordeón está abierto, cambiar color del botón */
+.accordion-button:not(.collapsed) {
+    background-color: #c87853;  /* Color rojo más claro */
+    color: #ffffff;  /* Texto blanco */
+}
+strong {
+    color: #9f2c17;
+}

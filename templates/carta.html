@@ -1,0 +1,67 @@
+{% extends 'plantilla_base.html' %}
+
+{% load static %}
+
+{% block style %}
+    <link href="{% static 'css/carta.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block titulo %}Carta{% endblock %}
+
+{% block contenido %}
+
+<!--<div id="carrusel-carta" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="3000">
+            <img src="{% static 'imagenes/banner.jpg' %}" class="d-block w-100 img-fluid" alt="Imagen 1">
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+            <img src="{% static 'imagenes/trago.jpg' %}" class="d-block w-100 img-fluid" alt="Imagen 2">
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+            <img src="{% static 'imagenes/postre.jpg' %}" class="d-block w-100 img-fluid" alt="Imagen 3">
+        </div>
+    </div>
+    <div class="carousel-caption">
+        <h1 class="display-4">Sabor y Calidad en Cada Plato</h1>
+        <p class="lead">Explora nuestra selección de platillos creados con ingredientes frescos y pasión por la cocina.</p>
+        <a href="{{ menu.archivo.url }}" class="btn btn-lg btn-primary {% if not menu %}disabled{% endif %}">
+            {% if menu %} Descargar Menú {% else %} Menú no disponible {% endif %}
+        </a>
+    </div>
+</div>-->
+
+<div class="container text-center my-4">
+    <h1 class="display-4">Descubre Nuestra Carta</h1>
+    <p class="lead">Conoce nuestros platos destacados y especialidades.</p>
+    <a href="{{ menu.archivo.url }}" class="btn btn-lg btn-primary target="_blank" {% if not menu %}disabled{% endif %}">
+        {% if menu %} Ver Menú {% else %} Menú no disponible {% endif %}
+    </a>
+</div>
+
+<hr>
+
+<div class="container my-5">
+    <h2 class="text-center mb-4">Platos Insignia</h2>
+    
+    <div class="row g-4">
+        <div class="col-md-4">
+            <img src="{% static 'imagenes/ensalada estrella.PNG' %}" class="img-fluid rounded shadow platos fade-in" alt="Plato 1">
+            <p class="text-center mt-2 plato-titulo">César más camarones</p>
+            <p class="text-center">¡Nuestra ensalada estrella te espera! Una deliciosa combinación de frescura y sabor, con la clásica ensalada César acompañada de suculentos camarones. Perfecta para disfrutar en cualquier momento del día.</p>
+        </div>
+        <div class="col-md-4">
+            <img src="{% static 'imagenes/plato estrella.PNG' %}" class="img-fluid rounded shadow platos fade-in" alt="Plato 2">
+            <p class="text-center mt-2 plato-titulo">Reineta, mantequilla, hierbas y ajo</p>
+            <p class="text-center">Nuestra cocina se llena de nuevos aromas con la llegada de la reineta a la mantequilla, hierbas y ajo. Un plato lleno de sabor y frescura que no te puedes perder.</p>
+        </div>
+        <div class="col-md-4">
+            <img src="{% static 'imagenes/plato estrella 2.jpg' %}" class="img-fluid rounded shadow platos fade-in" alt="Plato 3">
+            <p class="text-center mt-2 plato-titulo">Plato Estrella</p>
+            <p class="text-center">Preparado con ingredientes frescos y de la más alta calidad, este plato combina sabores exquisitos y una presentación impecable para ofrecerte una experiencia culinaria única.</p>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

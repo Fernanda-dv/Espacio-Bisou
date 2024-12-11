@@ -1,0 +1,90 @@
+{% extends 'plantilla_base.html' %}
+
+{% load static %}
+
+{% block style %}
+    <link href="{% static 'css/inicio.css' %}" rel="stylesheet"> 
+{% endblock %}
+
+{% block titulo %}Espacio Bisou{% endblock %}
+
+{% block contenido %}
+
+<div class="container-fluid p-5 mb-5 banner-background text-center">
+    <h1 class="display-4">Bienvenido a Espacio Bisou</h1>
+    <p>Un viaje culinario que transformará tu forma de disfrutar la comida</p>
+    <div>
+        <a href="https://wa.me/56968457606?text=Quiero%20hacer%20una%20reserva" class="btn btn-secondary">Hacer Reserva</a>
+        <a href="{% url 'carta' %}" class="btn btn-primary">Ver Carta</a>
+    </div>
+</div>
+
+<div class="container bg-light p-5 mb-5">
+    <div class="row align-items-center">
+        <div class="col-md-4">
+            <img src="{% static 'imagenes/restauranteBisou.jpg' %}" class="img-fluid" alt="Restauante Bisou">
+        </div>
+        <div class="col-md-8">
+            <h2>Restaurante Bisou</h2>
+            <p>¡El sabor de Francia llegó al centro de Melipilla!❤ <br> Nuestro querido Bisou Restaurante dejó Mallarauco para deleitarte con sus clásicos franceses en pleno corazón de Melipilla. Un lugar acogedor ideal para una cita romántica o reuniones con amigos</p>
+            <strong>VISÍTANOS:⏰</strong>
+            <strong><br> <li>Lunes, Miércoles, Jueves, Viernes y Sábado: de 09:30 a 18:30 hrs</li><li>Martes y Domingo: Cerrado</li> </strong>
+        </div>
+    </div>
+</div>
+
+<div class="container mb-5">
+    <div class="row justify-content-center">
+
+        <div class="col-md-4 mb-4 fade-in">
+            <div class="card h-100 bg-rojo">
+                <img src="{% static 'imagenes/postre.jpg' %}" class="card-img-top img-fluid" alt="Desayuno" >
+                <div class="card-body text-center">
+                    <h4 class="card-title">Desayunos</h4>
+                    <p class="card-text">Comienza el día con energía. Nuestros desayunos te ofrecen opciones nutritivas y deliciosas, perfectas para iniciar la jornada con una sonrisa</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4 fade-in">
+            <div class="card h-100 bg-negro">
+                <img src="{% static 'imagenes/trago.jpg' %}" class="card-img-top img-fluid" alt="Postres" loading="lazy">
+                <div class="card-body text-center">
+                    <h4 class="card-title">Bebestibles</h4>
+                    <p class="card-text">Refresca tu día con nuestras bebidas exclusivas. Desde cócteles artesanales hasta opciones sin alcohol, tenemos algo para cada gusto</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4 fade-in">
+            <div class="card h-100 bg-rojo">
+                <img src="{% static 'imagenes/banner.jpg' %}" class="card-img-top img-fluid" alt="Almuerzos" loading="lazy">
+                <div class="card-body text-center">
+                    <h4 class="card-title">Almuerzos</h4>
+                    <p class="card-text">Disfruta de un almuerzo lleno de sabor y frescura. Platos diseñados para satisfacer tu hambre de la mejor manera, con ingredientes locales y un toque único</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container bg-rojo p-5 mb-5">
+    <div class="row align-items-center">
+        <div class="col-md-4">
+            <img src="{% static 'imagenes/logoBisou.png' %}" class="img-fluid" alt="Nosotros">
+        </div>
+        <div class="col-md-8">
+            <h2>Sobre Nosotros</h2>
+            <p>Con nuestra gastronomía Francesa fusión Chilena, elaborada con productos locales de temporada, buscamos brindar a nuestros clientes experiencias culinarias memorables y momentos de bienestar en un ambiente acogedor con un servicio cercano y amable. <br> Aspiramos a ser reconocidos como el referente indiscutible de la alta gastronomía en la Región Metropolitana, destacando por nuestros platos innovadores,  refinada presentación, compromiso con la comunidad local y el medio ambiente.</p>
+        </div>
+    </div>
+</div>
+
+<div class="container bg-rojo p-5 mb-5">
+    <h2 class=text-center>Que dicen nuestros clientes</h2>
+    <div class="container bg-negro p-4">
+        <p>Aquí debería ir el widget de trip advisor</p>
+    </div>
+</div>
+
+{% endblock %}
